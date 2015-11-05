@@ -15,7 +15,7 @@ def main():
     for a in bs.select('.wiki tbody a'):
         href = a.get('href')
 
-        href_re = r'(?i)/?r/([a-z_]+)'
+        href_re = r'(?i)/?r/([0-9a-z_]+)'
         href_m = re.match(href_re, href)
         if not href_m or '+' in href:
             continue
