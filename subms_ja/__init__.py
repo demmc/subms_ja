@@ -4,7 +4,7 @@ import argparse
 import praw
 import bs4
 
-VERSION = '0.0.1'
+VERSION = '0.1.0'
 
 
 def parse_args():
