@@ -1,4 +1,5 @@
 import re
+import argparse
 
 import praw
 import bs4
@@ -6,7 +7,15 @@ import bs4
 VERSION = '0.0.1'
 
 
+def parse_args():
+    p = argparse.ArgumentParser(description='get japanese subreddits')
+    p.add_argument('--version', action='version', version='subms_ja v%s' % VERSION)
+    return p.parse_args()
+
+
 def main():
+    _ = parse_args()
+
     reddit = praw.Reddit('subms_ja/{VERSION}'.format(**globals()))
     page = reddit.get_wiki_page('newsokur', 'subreddits_jp')
 
